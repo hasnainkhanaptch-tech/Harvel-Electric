@@ -1,0 +1,3852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harvel Electric - Premium Electrical Solutions</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/cyborg/bootstrap.min.css">
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --primary-dark: #0b5ed7;
+            --primary-light: #6ea8fe;
+            --secondary-color: #6c757d;
+            --accent-color: #ffc107;
+            --accent-dark: #ffb300;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --gray-light: #e9ecef;
+            --gray-medium: #adb5bd;
+            --success-color: #198754;
+            --card-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+            --card-shadow-hover: 0 20px 40px rgba(50, 50, 93, 0.2), 0 15px 25px rgba(0, 0, 0, 0.1);
+            --gradient-primary: linear-gradient(135deg, #0d6efd 0%, #6ea8fe 100%);
+            --gradient-accent: linear-gradient(135deg, #ffc107 0%, #ffda6a 100%);
+            --gradient-dark: linear-gradient(135deg, #212529 0%, #495057 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding-top: 80px;
+            background-color: #f8f9fa;
+            color: var(--dark-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--gradient-primary);
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
+        
+        /* Header & Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.98) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(13, 110, 253, 0.1);
+        }
+        
+        .navbar.scrolled {
+            padding: 10px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: var(--primary-color) !important;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand:hover {
+            transform: scale(1.05);
+        }
+        
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            color: white;
+            font-weight: bold;
+            font-size: 1.3rem;
+            box-shadow: 0 8px 20px rgba(13, 110, 253, 0.3);
+        }
+        
+        .nav-link {
+            font-weight: 600;
+            color: var(--dark-color) !important;
+            margin: 0 5px;
+            padding: 10px 18px !important;
+            border-radius: 10px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-link:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-link:hover:before,
+        .nav-link.active:before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary-color) !important;
+            background-color: rgba(13, 110, 253, 0.05);
+        }
+        
+        .dropdown-menu {
+            border: none;
+            box-shadow: var(--card-shadow);
+            border-radius: 12px;
+            padding: 10px 0;
+            animation: fadeInDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(13, 110, 253, 0.1);
+        }
+        
+        .dropdown-item {
+            padding: 12px 20px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            border-radius: 6px;
+            margin: 0 10px;
+            width: calc(100% - 20px);
+        }
+        
+        .dropdown-item:hover {
+            background: var(--gradient-primary);
+            color: white !important;
+            transform: translateX(5px);
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.9)), 
+                        url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 250px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(13, 110, 253, 0.2) 0%, rgba(255, 193, 7, 0.1) 100%);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(to right, #fff, var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+        
+        .hero-btn {
+            padding: 16px 45px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            background: var(--gradient-primary);
+            border: none;
+            color: white;
+        }
+        
+        .hero-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.7s ease;
+            z-index: -1;
+        }
+        
+        .hero-btn:hover:before {
+            left: 100%;
+        }
+        
+        .hero-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+        }
+        
+        /* Floating Elements in Hero */
+        .floating-element {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            z-index: 2;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating-1 {
+            width: 70px;
+            height: 70px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .floating-2 {
+            width: 50px;
+            height: 50px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+        
+        .floating-3 {
+            width: 40px;
+            height: 40px;
+            bottom: 30%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100px;
+            height: 6px;
+            background: var(--gradient-primary);
+            border-radius: 3px;
+        }
+        
+        .section-title.center:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-subtitle {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin-bottom: 60px;
+        }
+        
+        .section-bg-light {
+            background-color: var(--light-color);
+        }
+        
+        .section-bg-gradient {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        /* About Section */
+        .about-section {
+            background-color: white;
+        }
+        
+        .about-img-container {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .about-img-container:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--card-shadow-hover);
+        }
+        
+        .about-img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        
+        .about-img-container:hover .about-img {
+            transform: scale(1.1);
+        }
+        
+        .about-feature {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 35px;
+            padding: 25px;
+            border-radius: 15px;
+            background: white;
+            box-shadow: var(--card-shadow);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-left: 5px solid var(--primary-color);
+        }
+        
+        .about-feature:hover {
+            transform: translateX(10px);
+            box-shadow: var(--card-shadow-hover);
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-primary);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 25px;
+            color: white;
+            font-size: 1.8rem;
+            flex-shrink: 0;
+            box-shadow: 0 10px 25px rgba(13, 110, 253, 0.25);
+        }
+        
+        /* Stats Counter */
+        .stats-section {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stats-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .stat-text {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* Product Categories */
+        .category-card {
+            background: white;
+            border-radius: 20px;
+            padding: 50px 30px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .category-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.6s ease;
+        }
+        
+        .category-card:hover:before {
+            transform: scaleX(1);
+        }
+        
+        .category-card:hover {
+            transform: translateY(-20px);
+            box-shadow: var(--card-shadow-hover);
+            border-color: rgba(13, 110, 253, 0.1);
+        }
+        
+        .category-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, rgba(13, 110, 253, 0.1) 0%, rgba(255, 193, 7, 0.1) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            color: var(--primary-color);
+            font-size: 3.5rem;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+        }
+        
+        .category-card:hover .category-icon {
+            background: var(--gradient-primary);
+            color: white;
+            transform: scale(1.15) rotate(10deg);
+            border-color: white;
+            box-shadow: 0 15px 30px rgba(13, 110, 253, 0.3);
+        }
+        
+        .category-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        /* Product Cards */
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+            border: 1px solid #eee;
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--card-shadow-hover);
+        }
+        
+        .product-img-container {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .product-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .product-card:hover .product-img {
+            transform: scale(1.1);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--gradient-accent);
+            color: var(--dark-color);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            box-shadow: 0 8px 20px rgba(255, 193, 7, 0.3);
+            z-index: 2;
+        }
+        
+        .product-body {
+            padding: 30px;
+        }
+        
+        .product-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        .product-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+        
+        .product-feature {
+            background: rgba(13, 110, 253, 0.1);
+            color: var(--primary-color);
+            padding: 8px 15px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .product-price {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .btn-product {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn-product:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s ease;
+            z-index: -1;
+        }
+        
+        .btn-product:hover:before {
+            left: 100%;
+        }
+        
+        .btn-product:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(13, 110, 253, 0.25);
+        }
+        
+        /* Downloads Section */
+        .downloads-section {
+            background: var(--gradient-dark);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .downloads-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .download-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 50px 30px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .download-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: -1;
+        }
+        
+        .download-card:hover:before {
+            opacity: 0.1;
+        }
+        
+        .download-card:hover {
+            transform: translateY(-15px);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .download-icon {
+            font-size: 4rem;
+            margin-bottom: 30px;
+            display: inline-block;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .download-card:hover .download-icon {
+            transform: scale(1.2) rotate(10deg);
+        }
+        
+        .btn-download {
+            background: white;
+            color: var(--primary-color);
+            border: none;
+            padding: 14px 35px;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn-download:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            transition: left 0.5s ease;
+            z-index: -1;
+        }
+        
+        .btn-download:hover:before {
+            left: 0;
+        }
+        
+        .btn-download:hover {
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background-color: white;
+        }
+        
+        .contact-card {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: var(--card-shadow);
+            height: 100%;
+            transition: all 0.4s ease;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--card-shadow-hover);
+        }
+        
+        .contact-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 15px;
+            background: rgba(13, 110, 253, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-left: 5px solid var(--primary-color);
+        }
+        
+        .contact-info:hover {
+            background: rgba(13, 110, 253, 0.1);
+            transform: translateX(10px);
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 25px;
+            color: white;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            box-shadow: 0 10px 25px rgba(13, 110, 253, 0.25);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--gradient-dark);
+            color: white;
+            padding: 100px 0 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-primary);
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .footer-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+            box-shadow: 0 10px 25px rgba(13, 110, 253, 0.3);
+        }
+        
+        .footer-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            position: relative;
+            padding-left: 0;
+        }
+        
+        .footer-links a:before {
+            content: '→';
+            position: absolute;
+            left: -20px;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 20px;
+        }
+        
+        .footer-links a:hover:before {
+            left: 0;
+            opacity: 1;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .social-icon:hover {
+            background: var(--gradient-primary);
+            transform: translateY(-5px) rotate(5deg);
+        }
+        
+        .footer-bottom {
+            margin-top: 80px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+        }
+        
+        @keyframes slideInLeft {
+            from { transform: translateX(-100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes slideInRight {
+            from { transform: translateX(100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(13, 110, 253, 0.5); }
+            50% { box-shadow: 0 0 40px rgba(13, 110, 253, 0.8); }
+        }
+        
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .glow-animation {
+            animation: glow 3s ease-in-out infinite;
+        }
+        
+        .slide-in-left {
+            animation: slideInLeft 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .slide-in-right {
+            animation: slideInRight 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* Modal Styles */
+        .modal-content {
+            border-radius: 20px;
+            border: none;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        .modal-header {
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 20px 20px 0 0;
+            padding: 25px 30px;
+            border: none;
+        }
+        
+        .modal-body {
+            padding: 40px;
+        }
+        
+        .btn-modal {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn-modal:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s ease;
+            z-index: -1;
+        }
+        
+        .btn-modal:hover:before {
+            left: 100%;
+        }
+        
+        .btn-modal:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(13, 110, 253, 0.25);
+        }
+        
+        /* Category Navigation */
+        .category-nav {
+            background: white;
+            padding: 20px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 80px;
+            z-index: 100;
+            margin-bottom: 60px;
+            border-radius: 0 0 20px 20px;
+        }
+        
+        .category-nav .nav-link {
+            color: var(--dark-color) !important;
+            font-weight: 600;
+            padding: 12px 25px !important;
+            border-radius: 50px;
+            margin: 0 10px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+        }
+        
+        .category-nav .nav-link.active,
+        .category-nav .nav-link:hover {
+            background: var(--gradient-primary);
+            color: white !important;
+            box-shadow: 0 10px 25px rgba(13, 110, 253, 0.25);
+            border-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .section {
+                padding: 80px 0;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .category-nav .nav-link {
+                padding: 10px 20px !important;
+                margin: 5px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .category-nav .nav-link {
+                padding: 8px 15px !important;
+                font-size: 0.9rem;
+                margin: 3px;
+            }
+            
+            .floating-element {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-btn {
+                padding: 14px 35px;
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .navbar-brand {
+                font-size: 1.5rem;
+            }
+        }
+        
+        /* Download Notification */
+        .download-notice {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1050;
+            max-width: 300px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <div class="logo-icon">HE</div>
+                Harvel Electric
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#fans">Fans</a></li>
+                            <li><a class="dropdown-item" href="#geysers">Geysers</a></li>
+                            <li><a class="dropdown-item" href="#cfl">CFL Lights</a></li>
+                            <li><a class="dropdown-item" href="#wiring">Wiring Products</a></li>
+                            <li><a class="dropdown-item" href="#switches">Switches & Sockets</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Download Notice Alert -->
+    <div class="download-notice alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Download Complete!</strong> Your file has been downloaded.
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <!-- Floating Elements -->
+        <div class="floating-element floating-1">
+            <i class="bi bi-lightning-fill" style="font-size: 2rem;"></i>
+        </div>
+        <div class="floating-element floating-2">
+            <i class="bi bi-shield-check" style="font-size: 1.5rem;"></i>
+        </div>
+        <div class="floating-element floating-3">
+            <i class="bi bi-star-fill" style="font-size: 1.2rem;"></i>
+        </div>
+        
+        <div class="container hero-content">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8">
+                    <h1 class="hero-title animate__animated animate__fadeInDown animate__delay-0.5s">Powering Your World with Excellence</h1>
+                    <p class="hero-subtitle animate__animated animate__fadeInUp animate__delay-1s">Harvel Electric delivers premium electrical solutions with 25+ years of expertise. Discover energy-efficient products that combine innovation, safety, and reliability for homes and industries.</p>
+                    <a href="#products" class="btn hero-btn animate__animated animate__pulse animate__delay-2s">Explore Our Products <i class="bi bi-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title fade-in-up">About Harvel Electric</h2>
+                    <p class="section-subtitle fade-in-up" style="animation-delay: 0.2s">With a legacy of excellence spanning over two decades, we are committed to providing electrical solutions that empower homes, businesses, and industries.</p>
+                </div>
+            </div>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="about-img-container slide-in-left">
+                        <img src="./images/harvelelectric.jpg" alt="Modern Electrical Showroom" class="about-img">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-feature fade-in-up" style="animation-delay: 0.3s">
+                        <div class="feature-icon">
+                            <i class="bi bi-award"></i>
+                        </div>
+                        <div>
+                            <h4>Certified Quality</h4>
+                            <p>All products undergo rigorous testing and hold ISO 9001, CE, and BIS certifications ensuring international standards compliance.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="about-feature fade-in-up" style="animation-delay: 0.5s">
+                        <div class="feature-icon">
+                            <i class="bi bi-lightning-charge"></i>
+                        </div>
+                        <div>
+                            <h4>Energy Efficient</h4>
+                            <p>Our products are designed to reduce energy consumption by up to 70% compared to conventional alternatives, saving costs and the environment.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="about-feature fade-in-up" style="animation-delay: 0.7s">
+                        <div class="feature-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <div>
+                            <h4>Safety First</h4>
+                            <p>Every product is engineered with advanced safety features, multiple protection layers, and undergoes extensive safety testing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-item">
+                        <span class="stat-number count" data-count="25">0</span>
+                        <span class="stat-text">Years of Excellence</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-item">
+                        <span class="stat-number count" data-count="5000">0</span>
+                        <span class="stat-text">Products in Catalog</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-item">
+                        <span class="stat-number count" data-count="25000">0</span>
+                        <span class="stat-text">Happy Customers</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-item">
+                        <span class="stat-number count" data-count="50">0</span>
+                        <span class="stat-text">Cities Served</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Categories -->
+    <section class="section section-bg-gradient">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title center fade-in-up">Our Product Categories</h2>
+                    <p class="section-subtitle fade-in-up" style="animation-delay: 0.2s">Explore our comprehensive range of electrical products organized by category for easy selection.</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4 col-sm-6">
+                    <div class="category-card fade-in-up" style="animation-delay: 0.1s">
+                        <div class="category-icon">
+                            <i class="bi bi-fan"></i>
+                        </div>
+                        <h3 class="category-title">Fans</h3>
+                        <p>Premium ceiling, table, exhaust, pedestal and wall mounted fans with energy efficient BLDC technology and smart features.</p>
+                        
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-sm-6">
+                    <div class="category-card fade-in-up" style="animation-delay: 0.2s">
+                        <div class="category-icon">
+                            <i class="bi bi-thermometer-sun"></i>
+                        </div>
+                        <h3 class="category-title">Geysers</h3>
+                        <p>Storage, instant, solar and gas geysers with advanced heating technology, safety features and energy efficiency.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-sm-6">
+                    <div class="category-card fade-in-up" style="animation-delay: 0.3s">
+                        <div class="category-icon">
+                            <i class="bi bi-lightbulb"></i>
+                        </div>
+                        <h3 class="category-title">CFL Lights</h3>
+                        <p>Energy efficient CFL bulbs, tubes, spotlights and decorative lights with long lifespan and excellent color rendering.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-sm-6">
+                    <div class="category-card fade-in-up" style="animation-delay: 0.4s">
+                        <div class="category-icon">
+                            <i class="bi bi-lightning-charge"></i>
+                        </div>
+                        <h3 class="category-title">Wiring Products</h3>
+                        <p>High quality copper wires, conduits, cable trays, armoured cables and junction boxes for safe electrical installations.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-sm-6">
+                    <div class="category-card fade-in-up" style="animation-delay: 0.5s">
+                        <div class="category-icon">
+                            <i class="bi bi-toggle-on"></i>
+                        </div>
+                        <h3 class="category-title">Switches & Sockets</h3>
+                        <p>Modern modular switches, power sockets, dimmers, USB charging sockets and combination units for every need.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-sm-6">
+                    <div class="category-card fade-in-up" style="animation-delay: 0.6s">
+                        <div class="category-icon">
+                            <i class="bi bi-download"></i>
+                        </div>
+                        <h3 class="category-title">Documentation</h3>
+                        <p>Complete product catalogs, price lists, technical specifications, installation manuals and safety guidelines.</p>
+                        <a href="#downloads" class="btn btn-outline-primary mt-3">View Downloads</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="section product-section">
+        <div class="container">
+            <!-- Category Navigation -->
+            <div class="category-nav">
+                <div class="container">
+                    <ul class="nav justify-content-center">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#fans">Fans</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#geysers">Geysers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#cfl">CFL Lights</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#wiring">Wiring Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#switches">Switches & Sockets</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Fans Category -->
+            <div id="fans" class="product-category mb-5">
+                <h3 class="mb-4">Premium Fans Collection</h3>
+                <div class="row g-4">
+                    <!-- Product cards will be dynamically loaded -->
+                </div>
+            </div>
+            
+            <!-- Geysers Category -->
+            <div id="geysers" class="product-category mb-5" style="display: none;">
+                <h3 class="mb-4">Advanced Geysers Range</h3>
+                <div class="row g-4">
+                    <!-- Product cards will be dynamically loaded -->
+                </div>
+            </div>
+            
+            <!-- CFL Lights Category -->
+            <div id="cfl" class="product-category mb-5" style="display: none;">
+                <h3 class="mb-4">Energy Efficient Lighting</h3>
+                <div class="row g-4">
+                    <!-- Product cards will be dynamically loaded -->
+                </div>
+            </div>
+            
+            <!-- Wiring Products Category -->
+            <div id="wiring" class="product-category mb-5" style="display: none;">
+                <h3 class="mb-4">Wiring & Installation Products</h3>
+                <div class="row g-4">
+                    <!-- Product cards will be dynamically loaded -->
+                </div>
+            </div>
+            
+            <!-- Switches & Sockets Category -->
+            <div id="switches" class="product-category mb-5" style="display: none;">
+                <h3 class="mb-4">Switches & Sockets Collection</h3>
+                <div class="row g-4">
+                    <!-- Product cards will be dynamically loaded -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Downloads Section -->
+    <section id="downloads" class="section downloads-section">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title text-white fade-in-up">Product Documentation</h2>
+                    <p class="section-subtitle text-white-50 fade-in-up" style="animation-delay: 0.2s">Access complete technical specifications, installation guides, and product catalogs for informed decisions.</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="download-card fade-in-up" style="animation-delay: 0.1s">
+                        <div class="download-icon">
+                            <i class="bi bi-file-earmark-text"></i>
+                        </div>
+                        <h4 class="text-white">Complete Price List 2026</h4>
+                        <p class="text-white-50">Updated price list of all Harvel Electric products with current rates, discounts, and bulk order pricing.</p>
+                        <button class="btn btn-download download-btn" data-file="price-list">
+                            <i class="bi bi-download me-2"></i> Download PDF
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="download-card fade-in-up" style="animation-delay: 0.3s">
+                        <div class="download-icon">
+                            <i class="bi bi-journal-text"></i>
+                        </div>
+                        <h4 class="text-white">Product Catalog 2026</h4>
+                        <p class="text-white-50">Complete catalog with detailed specifications, features, applications and technical data of all products.</p>
+                        <button class="btn btn-download download-btn" data-file="catalog">
+                            <i class="bi bi-download me-2"></i> Download Catalog
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="download-card fade-in-up" style="animation-delay: 0.5s">
+                        <div class="download-icon">
+                            <i class="bi bi-file-word"></i>
+                        </div>
+                        <h4 class="text-white">Technical Specifications</h4>
+                        <p class="text-white-50">Detailed technical specifications, installation guidelines, safety information and maintenance schedules.</p>
+                        <button class="btn btn-download download-btn" data-file="specifications">
+                            <i class="bi bi-download me-2"></i> Download Specs
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <h4 class="text-white mb-4">Category-wise Documentation</h4>
+                    <div class="d-flex flex-wrap justify-content-center gap-3">
+                        <button class="btn btn-outline-light download-btn" data-file="fans-specs">
+                            <i class="bi bi-fan me-2"></i> Fans Documentation
+                        </button>
+                        <button class="btn btn-outline-light download-btn" data-file="geysers-specs">
+                            <i class="bi bi-thermometer-sun me-2"></i> Geysers Documentation
+                        </button>
+                        <button class="btn btn-outline-light download-btn" data-file="cfl-specs">
+                            <i class="bi bi-lightbulb me-2"></i> CFL Documentation
+                        </button>
+                        <button class="btn btn-outline-light download-btn" data-file="wiring-specs">
+                            <i class="bi bi-lightning-charge me-2"></i> Wiring Documentation
+                        </button>
+                        <button class="btn btn-outline-light download-btn" data-file="switches-specs">
+                            <i class="bi bi-toggle-on me-2"></i> Switches Documentation
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title fade-in-up">Contact Us</h2>
+                    <p class="section-subtitle fade-in-up" style="animation-delay: 0.2s">Reach out for product inquiries, technical support, partnership opportunities, or to visit our showroom.</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="contact-card slide-in-left">
+                        <h3 class="mb-4">Harvel Electric Headquarters</h3>
+                        
+                        <div class="contact-info">
+                            <div class="contact-icon">
+                                <i class="bi bi-geo-alt"></i>
+                            </div>
+                            <div>
+                                <h5>Showroom Address</h5>
+                                <p>123 Electrical Street, Power City, PC 400001</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info">
+                            <div class="contact-icon">
+                                <i class="bi bi-telephone"></i>
+                            </div>
+                            <div>
+                                <h5>Sales & Support</h5>
+                                <p>+1 (555) 123-4567</p>
+                                <p class="text-muted mb-0">Mon-Sat: 9:00 AM - 7:00 PM</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info">
+                            <div class="contact-icon">
+                                <i class="bi bi-envelope"></i>
+                            </div>
+                            <div>
+                                <h5>Email Address</h5>
+                                <p>info@harvelelectric.com</p>
+                                <p class="text-muted mb-0">sales@harvelelectric.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info">
+                            <div class="contact-icon">
+                                <i class="bi bi-clock"></i>
+                            </div>
+                            <div>
+                                <h5>Business Hours</h5>
+                                <p>Monday - Saturday: 9:00 AM - 7:00 PM</p>
+                                <p class="text-muted mb-0">Sunday: 10:00 AM - 5:00 PM</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <a href="mailto:info@harvelelectric.com" class="btn btn-product">
+                                <i class="bi bi-envelope me-2"></i> Send Email Inquiry
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="contact-card slide-in-right">
+                        <h3 class="mb-4">Visit Our Showroom</h3>
+                        <div class="ratio ratio-16x9 mb-4">
+                            <div style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center; border-radius: 15px; display: flex; align-items: center; justify-content: center;">
+                                <div class="text-center p-4 text-white">
+                                    <i class="bi bi-shop display-1 mb-3"></i>
+                                    <h4>Harvel Electric Showroom</h4>
+                                    <p class="mb-0">Experience our products firsthand</p>
+                                    <p>123 Electrical Street, Power City</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <h5>Connect With Us</h5>
+                            <p class="text-muted mb-3">Follow us on social media for updates, offers, and electrical tips.</p>
+                            <div class="social-icons">
+                                <a href="https://www.facebook.com/" class="social-icon">
+                                    <i class="bi bi-facebook"></i>
+                                </a>
+                                <a href="https://www.twitter.com/" class="social-icon">
+                                    <i class="bi bi-twitter"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/" class="social-icon">
+                                    <i class="bi bi-linkedin"></i>
+                                </a>
+                                <a href="https://www.instagram.com/" class="social-icon">
+                                    <i class="bi bi-instagram"></i>
+                                </a>
+                                <a href="https://www.youtube.com/" class="social-icon">
+                                    <i class="bi bi-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <div class="footer-logo">
+                        <div class="footer-icon">HE</div>
+                        <div>
+                            <h3 class="footer-title">Harvel Electric</h3>
+                            <p class="text-white-50">Excellence in Electrical Solutions Since 1998</p>
+                        </div>
+                    </div>
+                    <p class="text-white-50 mt-3">Providing reliable, energy-efficient electrical solutions for residential, commercial and industrial applications with uncompromising quality and safety standards. Your trusted partner for all electrical needs.</p>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-5 mb-md-0">
+                    <h5 class="text-white mb-4">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#downloads">Downloads</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+                    <h5 class="text-white mb-4">Product Categories</h5>
+                    <ul class="footer-links">
+                        <li><a href="#fans">Fans</a></li>
+                        <li><a href="#geysers">Geysers</a></li>
+                        <li><a href="#cfl">CFL Lights</a></li>
+                        <li><a href="#wiring">Wiring Products</a></li>
+                        <li><a href="#switches">Switches & Sockets</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3">
+                    <h5 class="text-white mb-4">Contact Information</h5>
+                    <ul class="footer-links">
+                        <li class="text-white-50 mb-3">
+                            <i class="bi bi-geo-alt me-2"></i> 123 Electrical Street, Power City, PC 400001
+                        </li>
+                        <li class="text-white-50 mb-3">
+                            <i class="bi bi-telephone me-2"></i> +1 (555) 123-4567
+                        </li>
+                        <li class="text-white-50 mb-3">
+                            <i class="bi bi-envelope me-2"></i> info@harvelelectric.com
+                        </li>
+                        <li class="text-white-50">
+                            <i class="bi bi-clock me-2"></i> Mon-Sat: 9:00 AM - 7:00 PM
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="mb-0">&copy; 2026 Harvel Electric. All rights reserved. | <span class="text-white-50">Designed with <i class="bi bi-heart-fill text-danger"></i> for quality electrical solutions</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Product Details Modal -->
+    <div class="modal fade" id="productDetailsModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productDetailsModalLabel">Product Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="productDetailsContent">
+                    <!-- Content will be loaded dynamically -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="downloadProductDetails">Download Specifications</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            // Fix: Initialize all Bootstrap dropdowns
+            var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'))
+            var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
+                return new bootstrap.Dropdown(dropdownToggleEl)
+            });
+            
+            // Navbar scroll effect
+            $(window).on('scroll', function() {
+                if ($(window).scrollTop() > 50) {
+                    $('.navbar').addClass('scrolled');
+                } else {
+                    $('.navbar').removeClass('scrolled');
+                }
+            });
+            
+            // Close dropdown when clicking outside (if needed)
+            $(document).on('click', function(e) {
+                if (!$(e.target).closest('.dropdown').length) {
+                    $('.dropdown-menu').removeClass('show');
+                }
+            });
+            
+            // High-quality product data with proper images
+            const products = {
+                fans: [
+                    {
+                        id: 'fan1',
+                        name: 'Harvel Supreme Ceiling Fan',
+                        description: 'Premium energy-efficient ceiling fan with remote control, 5-year warranty, and silent BLDC motor technology.',
+                        features: ['1200mm Sweep', 'Remote Control', 'BLDC Motor', '5-Year Warranty', 'Energy Star Rated'],
+                        price: '$89.99',
+                        badge: 'BESTSELLER',
+                        category: 'fans',
+                        image: './images/supremefan.jpg'
+                    },
+                    {
+                        id: 'fan2',
+                        name: 'Harvel Turbo Table Fan',
+                        description: 'Powerful oscillating table fan with safety grills, 3-speed settings, and energy-efficient operation.',
+                        features: ['400mm Blades', '90° Oscillation', '3 Speed Settings', 'Safety Grills', '2-Year Warranty'],
+                        price: '$34.99',
+                        badge: 'NEW ARRIVAL',
+                        category: 'fans',
+                        image: './images/turbofan.jpg'
+                    },
+                    {
+                        id: 'fan3',
+                        name: 'Harvel Silent Exhaust Fan',
+                        description: 'Ultra-silent exhaust fan with IP44 rating, perfect for bathrooms and kitchens with moisture resistance.',
+                        features: ['150mm Size', 'IP44 Rated', '<35 dB Noise', 'Auto Shutter', '1-Year Warranty'],
+                        price: '$24.99',
+                        badge: 'ENERGY SAVER',
+                        category: 'fans',
+                        image: './images/exhaustfan.jpg'
+                    },
+                    {
+                        id: 'fan4',
+                        name: 'Harvel Cool Breeze Pedestal',
+                        description: 'Height adjustable pedestal fan with remote control, timer function, and smooth oscillation.',
+                        features: ['450mm Blades', 'Height Adjustable', 'Remote Control', '8-Hour Timer', '2-Year Warranty'],
+                        price: '$59.99',
+                        badge: 'FEATURED',
+                        category: 'fans',
+                        image: './images/padestalfan.jpg'
+                    },
+                    {
+                        id: 'fan5',
+                        name: 'Harvel Wall Mount Industrial Fan',
+                        description: 'Heavy-duty wall mounted fan with tilt adjustment, metal construction, and industrial-grade motor.',
+                        features: ['500mm Blades', 'Wall Mount', 'Metal Construction', 'Industrial Grade', '3-Year Warranty'],
+                        price: '$79.99',
+                        badge: 'INDUSTRIAL',
+                        category: 'fans',
+                        image: './images/wallfan.jpg'
+                    }
+                ],
+                geysers: [
+                    {
+                        id: 'geyser1',
+                        name: 'Harvel Pro 25L Storage Geyser',
+                        description: '25-liter premium storage geyser with 5-star energy rating, advanced heating element, and smart controls.',
+                        features: ['25L Capacity', '5-Star Rating', 'Advanced Heating', 'Smart Control', '5-Year Warranty'],
+                        price: '$249.99',
+                        badge: 'BESTSELLER',
+                        category: 'geysers',
+                        image: './images/25litregeyser.png'
+                    },
+                    {
+                        id: 'geyser2',
+                        name: 'Harvel Instant 3L Geyser',
+                        description: 'Compact instant geyser with quick heating technology, pressure safety valve, and space-saving design.',
+                        features: ['3L Capacity', 'Instant Heating', 'Pressure Safety', 'Compact Design', '3-Year Warranty'],
+                        price: '$79.99',
+                        badge: 'ENERGY SAVER',
+                        category: 'geysers',
+                        image: './images/3lgeyser.jpg'
+                    },
+                    {
+                        id: 'geyser3',
+                        name: 'Harvel Solar 100L Geyser',
+                        description: '100-liter solar geyser with evacuated tubes, electric backup, and excellent thermal insulation.',
+                        features: ['100L Capacity', 'Evacuated Tubes', 'Electric Backup', 'Excellent Insulation', '10-Year Warranty'],
+                        price: '$499.99',
+                        badge: 'PREMIUM',
+                        category: 'geysers',
+                        image: './images/100lgeyser.jpg'
+                    },
+                    {
+                        id: 'geyser4',
+                        name: 'Harvel Pro 15L Storage Geyser',
+                        description: 'Compact 15-liter storage geyser ideal for small families with 4-star energy rating and fast heating.',
+                        features: ['15L Capacity', '4-Star Rating', 'Fast Heating', 'Compact Size', '5-Year Warranty'],
+                        price: '$199.99',
+                        badge: 'COMPACT',
+                        category: 'geysers',
+                        image: './images/15lgeyser.jpg'
+                    },
+                    {
+                        id: 'geyser5',
+                        name: 'Harvel Instant Gas Geyser',
+                        description: 'High-efficiency instant gas geyser with continuous flow, electronic ignition, and multiple safety features.',
+                        features: ['Gas Powered', 'Continuous Flow', 'Electronic Ignition', 'Multiple Safety', '3-Year Warranty'],
+                        price: '$149.99',
+                        badge: 'GAS POWERED',
+                        category: 'geysers',
+                        image: './images/gas.jpg'
+                    }
+                ],
+                cfl: [
+                    {
+                        id: 'cfl1',
+                        name: 'Harvel Bright 15W CFL Bulb',
+                        description: '15W CFL bulb equivalent to 75W incandescent with 8000 hours lifespan and warm white light.',
+                        features: ['15W Power', 'Warm White', '8000 Hours', 'Instant Start', '1-Year Warranty'],
+                        price: '$4.99',
+                        badge: 'BESTSELLER',
+                        category: 'cfl',
+                        image: './images/cfl15w.jpg'
+                    },
+                    {
+                        id: 'cfl2',
+                        name: 'Harvel Bright 20W CFL Tube',
+                        description: '20W CFL tube light with high lumen output, energy saving technology, and 12000 hours lifespan.',
+                        features: ['20W Power', 'Cool White', '12000 Hours', 'High Lumen', '1-Year Warranty'],
+                        price: '$6.99',
+                        badge: 'ENERGY SAVER',
+                        category: 'cfl',
+                        image: './images/20w.jpg'
+                    },
+                    {
+                        id: 'cfl3',
+                        name: 'Harvel Bright 11W CFL Spotlight',
+                        description: '11W CFL spotlight with directional lighting, perfect for accent and display areas with focused illumination.',
+                        features: ['11W Power', 'Spotlight', '6000 Hours', 'Directional Light', '1-Year Warranty'],
+                        price: '$5.99',
+                        badge: 'ACCENT LIGHTING',
+                        category: 'cfl',
+                        image: './images/spotlight.jpg'
+                    },
+                    {
+                        id: 'cfl4',
+                        name: 'Harvel Bright 23W CFL Bulb',
+                        description: '23W CFL bulb equivalent to 100W incandescent with 10000 hours lifespan and daylight white color.',
+                        features: ['23W Power', 'Daylight White', '10000 Hours', 'High Output', '1-Year Warranty'],
+                        price: '$5.99',
+                        badge: 'HIGH OUTPUT',
+                        category: 'cfl',
+                        image: './images/cfl23w.jpg'
+                    },
+                    {
+                        id: 'cfl5',
+                        name: 'Harvel Bright 13W CFL Globe',
+                        description: '13W CFL globe light with 360 degree illumination, perfect for decorative fixtures and pendant lights.',
+                        features: ['13W Power', 'Globe Shape', '8500 Hours', '360° Illumination', '1-Year Warranty'],
+                        price: '$5.49',
+                        badge: 'DECORATIVE',
+                        category: 'cfl',
+                        image: './images/globe.jpg'
+                    }
+                ],
+                wiring: [
+                    {
+                        id: 'wire1',
+                        name: 'Harvel 2.5mm² Copper Wire',
+                        description: 'High conductivity copper wire with PVC insulation, flame retardant properties, and IS 694 certification.',
+                        features: ['2.5mm² Size', 'Pure Copper', 'PVC Insulation', 'Flame Retardant', 'IS 694 Certified'],
+                        price: '$90/100m',
+                        badge: 'BESTSELLER',
+                        category: 'wiring',
+                        image: './images/wire1.jpg'
+                    },
+                    {
+                        id: 'wire2',
+                        name: 'Harvel PVC Conduit Pipe',
+                        description: 'Rigid PVC conduit pipe for protecting electrical wires, fire retardant, UV resistant, and easy to install.',
+                        features: ['20mm Diameter', 'Fire Retardant', 'UV Resistant', 'Easy Installation', '3m Length'],
+                        price: '$3.99/3m',
+                        badge: 'DURABLE',
+                        category: 'wiring',
+                        image: './images/wire2.jpg'
+                    },
+                    {
+                        id: 'wire3',
+                        name: 'Harvel Cable Tray System',
+                        description: 'Galvanized steel cable tray for organizing cables in commercial installations with high load capacity.',
+                        features: ['100mm Width', 'Galvanized Steel', 'High Load Capacity', 'Corrosion Resistant', 'Easy Installation'],
+                        price: '$24.99/2m',
+                        badge: 'INDUSTRIAL',
+                        category: 'wiring',
+                        image: './images/wire3.jpg'
+                    },
+                    {
+                        id: 'wire4',
+                        name: 'Harvel Flexible Conduit',
+                        description: 'Corrugated flexible conduit for wiring in tight spaces, waterproof IP67 rating, and easy bending.',
+                        features: ['20mm Diameter', 'Flexible', 'IP67 Waterproof', 'Easy to Bend', '25m Roll'],
+                        price: '$29.99/roll',
+                        badge: 'WATERPROOF',
+                        category: 'wiring',
+                        image: './images/wire4.jpg'
+                    },
+                    {
+                        id: 'wire5',
+                        name: 'Harvel Armoured Cable',
+                        description: 'Steel wire armoured cable for underground and outdoor installations with XLPE insulation.',
+                        features: ['4x2.5mm²', 'Steel Armour', 'Underground Use', 'XLPE Insulation', 'Outdoor Rated'],
+                        price: '$199.99/50m',
+                        badge: 'PREMIUM',
+                        category: 'wiring',
+                        image: './images/wire5.jpg'
+                    },
+                    {
+                        id: 'wire6',
+                        name: 'Harvel PVC Junction Box',
+                        description: 'Weatherproof PVC junction box with IP65 rating, multiple entry points, and UV resistance.',
+                        features: ['IP65 Rated', 'PVC Material', '6 Entry Points', 'Weatherproof', 'UV Resistant'],
+                        price: '$4.99',
+                        badge: 'WEATHERPROOF',
+                        category: 'wiring',
+                        image: './images/wire6.jpg'
+                    }
+                ],
+                switches: [
+                    {
+                        id: 'switch1',
+                        name: 'Harvel Modular 6A Switch',
+                        description: 'Single pole modular switch with smooth operation, screwless design, and premium finish.',
+                        features: ['6A Rating', 'Modular Design', 'Screwless', 'Smooth Operation', '2-Year Warranty'],
+                        price: '$1.99',
+                        badge: 'BESTSELLER',
+                        category: 'switches',
+                        image: './images/switch1.jpg'
+                    },
+                    {
+                        id: 'switch2',
+                        name: 'Harvel 16A Power Socket',
+                        description: '3-pin power socket with safety shutters, durable contacts, and modern modular design.',
+                        features: ['16A Rating', '3-Pin', 'Safety Shutters', 'Durable Contacts', '2-Year Warranty'],
+                        price: '$3.49',
+                        badge: 'HEAVY DUTY',
+                        category: 'switches',
+                        image: './images/switch2.jpg'
+                    },
+                    {
+                        id: 'switch3',
+                        name: 'Harvel LED Dimmer Switch',
+                        description: 'Rotary dimmer switch compatible with LED, CFL, and incandescent bulbs with smooth dimming control.',
+                        features: ['400W Capacity', 'LED Compatible', 'Rotary Control', 'Smooth Dimming', '2-Year Warranty'],
+                        price: '$12.99',
+                        badge: 'SMART CONTROL',
+                        category: 'switches',
+                        image: './images/switch3.jpg'
+                    },
+                    {
+                        id: 'switch4',
+                        name: 'Harvel USB Charging Socket',
+                        description: 'Power socket with built-in USB charging ports, fast charging technology, and smart device detection.',
+                        features: ['USB Ports', 'Fast Charging', '2.4A Output', 'Smart IC', '2-Year Warranty'],
+                        price: '$8.99',
+                        badge: 'MODERN',
+                        category: 'switches',
+                        image: './images/switch4.jpg'
+                    },
+                    {
+                        id: 'switch5',
+                        name: 'Harvel Bell Push Switch',
+                        description: 'Decorative bell push switch with illuminated button, premium finish, and momentary contact design.',
+                        features: ['Bell Push', 'Illuminated', 'Decorative', 'Momentary Contact', '1-Year Warranty'],
+                        price: '$3.99',
+                        badge: 'DECORATIVE',
+                        category: 'switches',
+                        image: './images/switch5.jpg'
+                    },
+                    {
+                        id: 'switch6',
+                        name: 'Harvel 2-Gang Switch Combo',
+                        description: 'Two gang switch combination with one switch and one power socket in space-saving design.',
+                        features: ['2-Gang Design', 'Combo Unit', 'Space Saving', 'Modern Look', '2-Year Warranty'],
+                        price: '$5.99',
+                        badge: 'SPACE SAVER',
+                        category: 'switches',
+                        image: './images/switch6.jpg'
+                    }
+                ]
+            };
+            
+            // Function to generate product cards
+            function generateProductCards(category) {
+                const container = $(`#${category} .row`);
+                container.empty();
+                
+                products[category].forEach((product, index) => {
+                    const card = `
+                        <div class="col-md-4 col-lg-3">
+                            <div class="product-card fade-in-up" style="animation-delay: ${0.1 + (index * 0.1)}s">
+                                <div class="product-img-container">
+                                    ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
+                                    <img src="${product.image}" alt="${product.name}" class="product-img">
+                                </div>
+                                <div class="product-body">
+                                    <h5 class="product-title">${product.name}</h5>
+                                    <p class="text-muted mb-3">${product.description}</p>
+                                    <div class="product-features">
+                                        ${product.features.slice(0, 3).map(feature => `<span class="product-feature">${feature}</span>`).join('')}
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center mt-3">
+                                        <div class="product-price">${product.price}</div>
+                                        <button class="btn btn-product view-details" data-product="${product.id}">
+                                            View Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    container.append(card);
+                });
+            }
+            
+            // Initialize product cards for all categories
+            Object.keys(products).forEach(category => {
+                generateProductCards(category);
+            });
+            
+            // Show only fans initially
+            $('.product-category').hide();
+            $('#fans').show();
+            
+            // Category navigation
+            $('.category-nav .nav-link').on('click', function(e) {
+                e.preventDefault();
+                
+                const target = $(this).attr('href').substring(1);
+                
+                // Update active state
+                $('.category-nav .nav-link').removeClass('active');
+                $(this).addClass('active');
+                
+                // Hide all categories and show target
+                $('.product-category').hide().removeClass('animate__animated animate__fadeIn');
+                $(`#${target}`).show().addClass('animate__animated animate__fadeIn');
+                
+                // Smooth scroll to category
+                $('html, body').animate({
+                    scrollTop: $(`#${target}`).offset().top - 150
+                }, 600);
+            });
+            
+            // Fix: Ensure dropdown links in navbar work correctly
+            $('.navbar .dropdown-item').on('click', function(e) {
+                e.preventDefault();
+                
+                const target = $(this).attr('href');
+                if (target && target.startsWith('#')) {
+                    // Hide the dropdown
+                    $('.dropdown-menu').removeClass('show');
+                    
+                    // Navigate to the section
+                    const targetId = target.substring(1);
+                    
+                    // Update active nav link
+                    $('.navbar .nav-link').removeClass('active');
+                    $('.navbar .nav-link[href="' + target + '"]').addClass('active');
+                    
+                    // Handle category navigation
+                    if (['fans', 'geysers', 'cfl', 'wiring', 'switches'].includes(targetId)) {
+                        // Update category nav
+                        $('.category-nav .nav-link').removeClass('active');
+                        $(`.category-nav .nav-link[href="${target}"]`).addClass('active');
+                        
+                        // Show the category
+                        $('.product-category').hide();
+                        $(target).show().addClass('animate__animated animate__fadeIn');
+                    }
+                    
+                    // Smooth scroll to section
+                    $('html, body').animate({
+                        scrollTop: $(target).offset().top - 80
+                    }, 800);
+                }
+            });
+            
+            // Smooth scrolling for navigation links
+            $('a[href^="#"]').not('.dropdown-item, .category-nav .nav-link').on('click', function(e) {
+                e.preventDefault();
+                
+                const target = this.hash;
+                const $target = $(target);
+                
+                $('html, body').animate({
+                    'scrollTop': $target.offset().top - 80
+                }, 800, 'swing');
+                
+                // Update active nav link
+                $('.navbar .nav-link').removeClass('active');
+                $(`.navbar .nav-link[href="${target}"]`).addClass('active');
+            });
+            
+            // Update active nav link on scroll
+            $(window).on('scroll', function() {
+                const scrollPos = $(window).scrollTop() + 100;
+                
+                $('section[id]').each(function() {
+                    const top = $(this).offset().top;
+                    const bottom = top + $(this).outerHeight();
+                    
+                    if (scrollPos >= top && scrollPos <= bottom) {
+                        const id = $(this).attr('id');
+                        $('.navbar .nav-link').removeClass('active');
+                        $(`.navbar .nav-link[href="#${id}"]`).addClass('active');
+                    }
+                });
+            });
+            
+            // Animated counter for stats
+            function animateCounter() {
+                $('.count').each(function() {
+                    const $this = $(this);
+                    const countTo = $this.attr('data-count');
+                    
+                    $({ countNum: $this.text() }).animate({
+                        countNum: countTo
+                    }, {
+                        duration: 2000,
+                        easing: 'swing',
+                        step: function() {
+                            $this.text(Math.floor(this.countNum));
+                        },
+                        complete: function() {
+                            $this.text(this.countNum);
+                        }
+                    });
+                });
+            }
+            
+            // Trigger counter animation when stats section is in view
+            function checkCounter() {
+                const statsSection = $('.stats-section');
+                const sectionTop = statsSection.offset().top;
+                const sectionBottom = sectionTop + statsSection.outerHeight();
+                const scrollPos = $(window).scrollTop() + $(window).height();
+                
+                if (scrollPos > sectionTop && !statsSection.hasClass('animated')) {
+                    statsSection.addClass('animated');
+                    animateCounter();
+                }
+            }
+            
+            $(window).on('scroll', checkCounter);
+            checkCounter(); // Check on load
+            
+            // Show download notification
+            function showDownloadNotice(fileName) {
+                $('.download-notice').html(`
+                    <strong>Download Complete!</strong> ${fileName} has been downloaded.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                `).fadeIn();
+                
+                // Hide after 5 seconds
+                setTimeout(function() {
+                    $('.download-notice').fadeOut();
+                }, 5000);
+            }
+            
+            // Function to create and trigger download
+            function downloadFile(content, fileName, contentType) {
+                const blob = new Blob([content], { type: contentType });
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = fileName;
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+                showDownloadNotice(fileName);
+            }
+            
+            // Comprehensive documentation content
+            const documentation = {
+                'price-list': {
+                    content: `HARVEL ELECTRIC - COMPLETE PRICE LIST 2023
+================================================================
+
+PRICE EFFECTIVE FROM: January 1, 2023
+All prices are in US Dollars (USD)
+Prices are exclusive of applicable taxes
+================================================================
+
+FANS CATEGORY
+-------------
+1. Harvel Supreme Ceiling Fan (HSCF-1200)
+   - Model: HSCF-1200-BLDC
+   - Price: $89.99
+   - Warranty: 5 years
+   - MOQ: 10 pieces
+
+2. Harvel Turbo Table Fan (HTTF-400)
+   - Model: HTTF-400-OSC
+   - Price: $34.99
+   - Warranty: 2 years
+   - MOQ: 20 pieces
+
+3. Harvel Silent Exhaust Fan (HSEF-150)
+   - Model: HSEF-150-IP44
+   - Price: $24.99
+   - Warranty: 1 year
+   - MOQ: 25 pieces
+
+4. Harvel Cool Breeze Pedestal Fan (HCBPF-450)
+   - Model: HCBPF-450-RMT
+   - Price: $59.99
+   - Warranty: 2 years
+   - MOQ: 15 pieces
+
+5. Harvel Wall Mount Industrial Fan (HWMF-500)
+   - Model: HWMF-500-IND
+   - Price: $79.99
+   - Warranty: 3 years
+   - MOQ: 10 pieces
+
+GEYSERS CATEGORY
+----------------
+1. Harvel Pro 25L Storage Geyser (HPSG-25)
+   - Model: HPSG-25-5STAR
+   - Price: $249.99
+   - Warranty: 5 years
+   - MOQ: 5 pieces
+
+2. Harvel Instant 3L Geyser (HIG-3)
+   - Model: HIG-3-INSTANT
+   - Price: $79.99
+   - Warranty: 3 years
+   - MOQ: 10 pieces
+
+3. Harvel Solar 100L Geyser (HSG-100)
+   - Model: HSG-100-SOLAR
+   - Price: $499.99
+   - Warranty: 10 years (tubes), 5 years (tank)
+   - MOQ: 2 pieces
+
+4. Harvel Pro 15L Storage Geyser (HPSG-15)
+   - Model: HPSG-15-4STAR
+   - Price: $199.99
+   - Warranty: 5 years
+   - MOQ: 5 pieces
+
+5. Harvel Instant Gas Geyser (HIGG)
+   - Model: HIGG-GAS
+   - Price: $149.99
+   - Warranty: 3 years
+   - MOQ: 5 pieces
+
+CFL LIGHTS CATEGORY
+-------------------
+1. Harvel Bright 15W CFL Bulb (HBCFL-15)
+   - Model: HBCFL-15-WW
+   - Price: $4.99 per piece
+   - Warranty: 1 year
+   - MOQ: 50 pieces (pack of 10: $45.00)
+
+2. Harvel Bright 20W CFL Tube (HBCT-20)
+   - Model: HBCT-20-CW
+   - Price: $6.99 per piece
+   - Warranty: 1 year
+   - MOQ: 25 pieces
+
+3. Harvel Bright 11W CFL Spotlight (HBCS-11)
+   - Model: HBCS-11-SPOT
+   - Price: $5.99 per piece
+   - Warranty: 1 year
+   - MOQ: 30 pieces
+
+4. Harvel Bright 23W CFL Bulb (HBCFL-23)
+   - Model: HBCFL-23-DW
+   - Price: $5.99 per piece
+   - Warranty: 1 year
+   - MOQ: 40 pieces
+
+5. Harvel Bright 13W CFL Globe (HBCG-13)
+   - Model: HBCG-13-GLOBE
+   - Price: $5.49 per piece
+   - Warranty: 1 year
+   - MOQ: 35 pieces
+
+WIRING PRODUCTS CATEGORY
+------------------------
+1. Harvel 2.5mm² Copper Wire (HCW-2.5)
+   - Model: HCW-2.5-PVC
+   - Price: $89.99 per 100m roll
+   - Warranty: N/A
+   - MOQ: 5 rolls
+
+2. Harvel PVC Conduit Pipe (HPVC-20)
+   - Model: HPVC-20-3M
+   - Price: $3.99 per 3m length
+   - Warranty: N/A
+   - MOQ: 50 pieces
+
+3. Harvel Cable Tray System (HCT-100)
+   - Model: HCT-100-GI
+   - Price: $24.99 per 2m section
+   - Warranty: N/A
+   - MOQ: 10 sections
+
+4. Harvel Flexible Conduit (HFC-20)
+   - Model: HFC-20-IP67
+   - Price: $29.99 per 25m roll
+   - Warranty: N/A
+   - MOQ: 5 rolls
+
+5. Harvel Armoured Cable (HAC-4X2.5)
+   - Model: HAC-4X2.5-XLPE
+   - Price: $199.99 per 50m roll
+   - Warranty: N/A
+   - MOQ: 2 rolls
+
+6. Harvel PVC Junction Box (HJB-6)
+   - Model: HJB-6-IP65
+   - Price: $4.99 per piece
+   - Warranty: N/A
+   - MOQ: 20 pieces
+
+SWITCHES & SOCKETS CATEGORY
+---------------------------
+1. Harvel Modular 6A Switch (HMS-6)
+   - Model: HMS-6-SGL
+   - Price: $1.99 per piece
+   - Warranty: 2 years
+   - MOQ: 100 pieces
+
+2. Harvel 16A Power Socket (HPS-16)
+   - Model: HPS-16-3PIN
+   - Price: $3.49 per piece
+   - Warranty: 2 years
+   - MOQ: 80 pieces
+
+3. Harvel LED Dimmer Switch (HLDS-400)
+   - Model: HLDS-400-ROTARY
+   - Price: $12.99 per piece
+   - Warranty: 2 years
+   - MOQ: 50 pieces
+
+4. Harvel USB Charging Socket (HUC-2.4)
+   - Model: HUC-2.4-FAST
+   - Price: $8.99 per piece
+   - Warranty: 2 years
+   - MOQ: 60 pieces
+
+5. Harvel Bell Push Switch (HBPS)
+   - Model: HBPS-ILLUM
+   - Price: $3.99 per piece
+   - Warranty: 1 year
+   - MOQ: 75 pieces
+
+6. Harvel 2-Gang Switch Combo (H2G-SC)
+   - Model: H2G-SC-COMBO
+   - Price: $5.99 per piece
+   - Warranty: 2 years
+   - MOQ: 70 pieces
+
+================================================================
+BULK ORDER DISCOUNTS
+====================
+- Order Value $500-$999: 5% Discount
+- Order Value $1000-$4999: 10% Discount
+- Order Value $5000-$9999: 15% Discount
+- Order Value $10000+: 20% Discount + Free Shipping
+
+PAYMENT TERMS
+=============
+- 50% Advance with order confirmation
+- 50% before dispatch
+- Net 30 days for established customers
+- All prices subject to change without notice
+
+SHIPPING INFORMATION
+====================
+- Delivery Time: 7-14 business days
+- Shipping Charges: Actuals extra
+- Free Shipping: Orders above $1000
+- International Shipping: Available
+
+CONTACT INFORMATION
+===================
+Harvel Electric
+123 Electrical Street, Power City, PC 400001
+Phone: +1 (555) 123-4567
+Email: sales@harvelelectric.com
+Website: www.harvelelectric.com
+
+For bulk orders and dealership inquiries, please contact our sales team.
+================================================================
+This price list is valid until December 31, 2023.
+All products are subject to availability.`,
+                    fileName: 'Harvel-Electric-Price-List-2023.txt'
+                },
+                'catalog': {
+                    content: `HARVEL ELECTRIC - COMPLETE PRODUCT CATALOG 2023
+================================================================
+
+COMPANY OVERVIEW
+================
+Harvel Electric has been a trusted name in electrical products since 1998. 
+With over 25 years of excellence, we provide innovative, energy-efficient, 
+and reliable electrical solutions for residential, commercial, and industrial applications.
+
+OUR MISSION
+===========
+To deliver superior electrical products that enhance safety, efficiency, and 
+sustainability while providing exceptional customer service and technical support.
+
+PRODUCT CATEGORIES
+==================
+
+1. FANS
+-------
+Ceiling Fans:
+- Harvel Supreme Series (1200mm, 1400mm, 1500mm)
+- Harvel Classic Series (1050mm, 1200mm)
+- Harvel Energy Saver Series (BLDC Technology)
+- Harvel Smart Fans (Wi-Fi & App Controlled)
+
+Table & Pedestal Fans:
+- Harvel Turbo Series (300mm, 400mm, 450mm)
+- Harvel Cool Breeze Series (Oscillating & Non-oscillating)
+- Harvel Industrial Series (Heavy Duty)
+
+Exhaust Fans:
+- Harvel Silent Series (Bathroom & Kitchen)
+- Harvel Heavy Duty Series (Commercial)
+- Harvel Wall & Window Mounted
+
+Specialty Fans:
+- Harvel Tower Fans
+- Harvel Air Circulators
+- Harvel Industrial Exhaust Fans
+
+2. GEYSERS
+----------
+Storage Geysers:
+- Harvel Pro Series (15L, 25L, 35L, 50L)
+- Harvel Premium Series (With Digital Display)
+- Harvel Compact Series (10L, 6L)
+
+Instant Geysers:
+- Harvel Instant Series (3L, 6L)
+- Harvel Point-of-Use Series
+- Harvel Electric Shower Series
+
+Solar Geysers:
+- Harvel Solar Pro (100L, 150L, 200L)
+- Harvel Solar Compact (50L, 75L)
+- Harvel Solar with Electric Backup
+
+Gas Geysers:
+- Harvel Gas Instant (5L/min, 10L/min)
+- Harvel Gas Storage (Various capacities)
+
+3. CFL LIGHTS
+-------------
+CFL Bulbs:
+- Harvel Bright Series (5W to 30W)
+- Harvel Energy Saver Series (Various color temperatures)
+- Harvel Decorative Series (Globe, Candle, Spiral)
+
+CFL Tubes:
+- Harvel Tube Light Series (9W to 40W)
+- Harvel Circular Tubes
+- Harvel U-Shaped Tubes
+
+Specialty Lighting:
+- Harvel Spotlights (GU10, MR16)
+- Harvel Downlights
+- Harvel Panel Lights
+
+4. WIRING PRODUCTS
+------------------
+Wires & Cables:
+- Harvel Copper Wires (1.0mm² to 10mm²)
+- Harvel Armoured Cables (Various configurations)
+- Harvel Flexible Cables
+- Harvel Coaxial & Data Cables
+
+Conduits & Trunking:
+- Harvel PVC Conduits (20mm to 50mm)
+- Harvel Flexible Conduits
+- Harvel Cable Trunking
+- Harvel Cable Trays
+
+Accessories:
+- Harvel Junction Boxes (Various sizes)
+- Harvel Cable Glands
+- Harvel Cable Clips & Ties
+- Harvel Distribution Boards
+
+5. SWITCHES & SOCKETS
+---------------------
+Modular Switches:
+- Harvel Classic Series (6A, 16A)
+- Harvel Premium Series (With LED Indicators)
+- Harvel Smart Series (Touch & Remote Controlled)
+
+Sockets & Outlets:
+- Harvel Power Sockets (6A, 16A, 32A)
+- Harvel USB Charging Sockets
+- Harvel TV & Telephone Sockets
+- Harvel Data & Network Sockets
+
+Dimmers & Regulators:
+- Harvel Fan Regulators (300W, 500W)
+- Harvel Light Dimmers (LED & Incandescent)
+- Harvel Curtain Motor Controllers
+
+Specialty Switches:
+- Harvel Bell Press Switches
+- Harvel Door Bell Systems
+- Harvel Time Switches
+- Harvel Motion Sensor Switches
+
+PRODUCT FEATURES
+================
+
+Energy Efficiency:
+- All products designed for optimal energy consumption
+- BEE Star Rated appliances
+- Energy savings up to 70% compared to conventional products
+
+Safety Features:
+- Multiple protection layers
+- Overload and short circuit protection
+- Thermal cut-off mechanisms
+- Child safety features
+
+Quality Assurance:
+- ISO 9001:2015 Certified manufacturing
+- Rigorous quality testing at every stage
+- 100% performance testing before dispatch
+- CE, BIS, and RoHS compliance
+
+Warranty & Support:
+- Comprehensive warranty periods
+- Pan-India service network
+- 24x7 customer support
+- Online technical assistance
+
+TECHNICAL SPECIFICATIONS
+========================
+
+General Specifications:
+- Voltage: 230V ±10%, 50Hz (Standard)
+- Operating Temperature: 0°C to 40°C
+- Safety Standards: IEC, IS, BS, CE
+- IP Ratings: Varies by product category
+
+Material Specifications:
+- High-grade plastics (Fire Retardant Grade)
+- Pure copper conductors
+- Galvanized steel components
+- UV resistant materials for outdoor use
+
+Performance Specifications:
+- Energy efficiency ratings
+- Load capacity specifications
+- Lifespan and durability ratings
+- Noise level specifications (where applicable)
+
+INSTALLATION GUIDELINES
+=======================
+
+General Guidelines:
+- Installation by certified electricians only
+- Follow local electrical codes and regulations
+- Use appropriate tools and safety equipment
+- Proper earthing/grounding mandatory
+
+Product-Specific Guidelines:
+- Detailed installation manuals provided with each product
+- Minimum clearance requirements
+- Mounting specifications
+- Wiring diagrams and connection guides
+
+MAINTENANCE SCHEDULE
+====================
+
+Regular Maintenance:
+- Monthly visual inspections
+- Quarterly cleaning and dusting
+- Annual professional inspection
+- As-needed component replacement
+
+Preventive Maintenance:
+- Lubrication of moving parts (where applicable)
+- Checking electrical connections
+- Testing safety mechanisms
+- Performance verification
+
+SAFETY PRECAUTIONS
+==================
+
+Electrical Safety:
+- Always disconnect power before maintenance
+- Use insulated tools
+- Never operate with wet hands
+- Install proper circuit protection
+
+Product Safety:
+- Follow manufacturer's instructions
+- Do not overload circuits
+- Keep away from water unless IP rated
+- Regular safety checks recommended
+
+Environmental Safety:
+- Proper disposal of old products
+- Recycling programs available
+- RoHS compliant materials
+- Energy efficient operation
+
+ORDERING INFORMATION
+====================
+
+Minimum Order Quantities:
+- Varies by product category
+- Bulk discounts available
+- Custom packaging options
+- Private labeling available
+
+Delivery & Logistics:
+- Nationwide delivery network
+- Express shipping options
+- International shipping
+- Installation services available
+
+Customer Support:
+- Pre-sales consultation
+- Technical support
+- After-sales service
+- Warranty claims processing
+
+CONTACT INFORMATION
+===================
+
+Head Office:
+Harvel Electric
+123 Electrical Street
+Power City, PC 400001
+Phone: +1 (555) 123-4567
+Email: info@harvelelectric.com
+
+Sales Offices:
+- North Region: +1 (555) 123-4568
+- South Region: +1 (555) 123-4569
+- East Region: +1 (555) 123-4570
+- West Region: +1 (555) 123-4571
+
+Technical Support:
+Phone: 1800-123-4567 (Toll Free)
+Email: support@harvelelectric.com
+Website: www.harvelelectric.com/support
+
+Showroom Locations:
+- Power City: 123 Electrical Street
+- Metro City: 456 Commerce Avenue
+- Tech City: 789 Industry Road
+
+SOCIAL RESPONSIBILITY
+=====================
+
+Environmental Commitment:
+- Energy efficient products
+- Recyclable packaging
+- Reduced carbon footprint
+- Sustainable manufacturing
+
+Community Engagement:
+- Electrical safety awareness programs
+- Training for electricians
+- Support for technical education
+- Disaster relief assistance
+
+QUALITY CERTIFICATIONS
+======================
+- ISO 9001:2015 Quality Management System
+- CE Marking (European Conformity)
+- BIS Certification (Bureau of Indian Standards)
+- Energy Star Ratings
+- RoHS Compliance (Restriction of Hazardous Substances)
+- ISI Mark for relevant products
+
+================================================================
+This catalog is published by Harvel Electric Marketing Department.
+All information is subject to change without notice.
+For the most updated information, visit www.harvelelectric.com
+================================================================`,
+                    fileName: 'Harvel-Electric-Product-Catalog-2023.txt'
+                },
+                'specifications': {
+                    content: `HARVEL ELECTRIC - TECHNICAL SPECIFICATIONS MANUAL
+================================================================
+
+GENERAL TECHNICAL SPECIFICATIONS
+================================
+
+1. ELECTRICAL SPECIFICATIONS
+----------------------------
+1.1 Voltage Ratings:
+    - Standard Products: 230V AC ±10%, 50Hz
+    - Export Variants: 110V AC ±10%, 60Hz available
+    - Industrial Products: 415V AC 3-phase available
+
+1.2 Current Ratings:
+    - Lighting Products: Up to 6A
+    - Power Products: Up to 32A
+    - Industrial Products: Up to 63A
+
+1.3 Power Factor:
+    - Minimum: 0.85 lagging
+    - Average: 0.9-0.95 lagging
+    - High PF Models: >0.98 available
+
+1.4 Insulation Resistance:
+    - Minimum: 100 MΩ at 500V DC
+    - Standard: >500 MΩ at 500V DC
+    - Test Duration: 1 minute
+
+2. MATERIAL SPECIFICATIONS
+--------------------------
+2.1 Conductors:
+    - Copper Purity: 99.97% minimum
+    - Conductivity: 101% IACS minimum
+    - Temper: Annealed for flexibility
+
+2.2 Insulation Materials:
+    - PVC: FR Grade (Flame Retardant)
+    - XLPE: Cross-linked polyethylene
+    - Rubber: EPR (Ethylene Propylene Rubber)
+    - Silicone: High temperature applications
+
+2.3 Plastic Components:
+    - Material: Polycarbonate/ABS blends
+    - Fire Rating: UL94 V-0 minimum
+    - UV Resistance: UV stabilized compounds
+    - Impact Strength: High impact grade
+
+2.4 Metal Components:
+    - Steel: Galvanized/Stainless steel
+    - Aluminum: Anodized/powder coated
+    - Brass/Bronze: For contacts and terminals
+
+3. PERFORMANCE SPECIFICATIONS
+-----------------------------
+3.1 Temperature Ratings:
+    - Operating: -10°C to +40°C
+    - Storage: -20°C to +60°C
+    - Maximum: As per product category
+
+3.2 Humidity Resistance:
+    - Standard: Up to 85% RH non-condensing
+    - Protected: Up to 95% RH with condensation
+    - Special: IP rated for wet locations
+
+3.3 Mechanical Life:
+    - Switches: 40,000 operations minimum
+    - Sockets: 10,000 insertions minimum
+    - Fans: 20,000 hours continuous operation
+
+3.4 Electrical Life:
+    - At rated load: 10,000 hours minimum
+    - At 125% load: 1,000 hours minimum
+    - Intermittent duty: As per application
+
+4. SAFETY SPECIFICATIONS
+------------------------
+4.1 Protection Class:
+    - Class I: Earthed equipment
+    - Class II: Double insulated
+    - Class III: Extra low voltage
+
+4.2 IP Ratings (Ingress Protection):
+    - IP20: Basic protection (indoor use)
+    - IP44: Splash proof (bathrooms)
+    - IP65: Dust tight & water jet proof
+    - IP67: Dust tight & immersion proof
+
+4.3 Shock Protection:
+    - Basic insulation
+    - Supplementary insulation
+    - Reinforced insulation
+    - Double insulation
+
+4.4 Fire Protection:
+    - Flame retardant materials
+    - Self-extinguishing properties
+    - Low smoke emission
+    - Halogen free options
+
+PRODUCT-SPECIFIC TECHNICAL SPECIFICATIONS
+=========================================
+
+1. FANS TECHNICAL SPECIFICATIONS
+--------------------------------
+1.1 Ceiling Fans:
+    - Sweep: 1200mm, 1400mm, 1500mm
+    - Motor: Induction/BLDC
+    - Power: 55W-75W
+    - Speed: 300-380 RPM
+    - Air Delivery: 200-250 CMM
+    - Noise: <45 dB(A)
+    - Warranty: 2-5 years
+
+1.2 Table/Pedestal Fans:
+    - Blade Size: 300mm, 400mm, 450mm
+    - Motor: Sleeve/Ball bearing
+    - Power: 25W-65W
+    - Speed: 800-1200 RPM
+    - Oscillation: 90°-180°
+    - Noise: <50 dB(A)
+    - Warranty: 1-2 years
+
+1.3 Exhaust Fans:
+    - Size: 150mm, 200mm, 250mm
+    - Motor: Sleeve bearing
+    - Power: 20W-50W
+    - Air Flow: 250-450 m³/h
+    - Noise: <35 dB(A)
+    - IP Rating: IP44 minimum
+    - Warranty: 1 year
+
+2. GEYSERS TECHNICAL SPECIFICATIONS
+-----------------------------------
+2.1 Storage Geysers:
+    - Capacity: 15L, 25L, 50L
+    - Power: 1500W-3000W
+    - Heating Time: 20-45 minutes
+    - Pressure Rating: 8 Bar
+    - Energy Rating: 4-5 Star
+    - Efficiency: >90%
+    - Warranty: 5-7 years
+
+2.2 Instant Geysers:
+    - Capacity: 3L, 6L
+    - Power: 3000W-4500W
+    - Flow Rate: 3-6 L/min
+    - Heating Time: Instant
+    - Pressure Switch: 0.3-8 Bar
+    - Warranty: 3 years
+
+2.3 Solar Geysers:
+    - Capacity: 100L, 150L, 200L
+    - Collector: Evacuated tubes
+    - Tubes: 10-20 pieces
+    - Backup: 1500W-2000W
+    - Tank Insulation: 50mm PUF
+    - Warranty: 5-10 years
+
+3. CFL LIGHTS TECHNICAL SPECIFICATIONS
+--------------------------------------
+3.1 CFL Bulbs:
+    - Power: 5W-30W
+    - Equivalent: 3x-5x incandescent
+    - Luminous Flux: 300-1800 lm
+    - Color Temperature: 2700K-6500K
+    - CRI: >80
+    - Lifespan: 6000-10000 hours
+    - Warm-up: <60 seconds
+    - Warranty: 1 year
+
+3.2 CFL Tubes:
+    - Power: 9W-40W
+    - Length: 240mm-1200mm
+    - Diameter: 16mm-28mm
+    - Base: G5, G13, G24
+    - Luminous Efficacy: 50-80 lm/W
+    - Power Factor: >0.5
+    - Warranty: 1 year
+
+4. WIRING PRODUCTS TECHNICAL SPECIFICATIONS
+-------------------------------------------
+4.1 Copper Wires:
+    - Size: 1.0mm² to 10mm²
+    - Conductor: Stranded/Solid
+    - Insulation: PVC/XLPE
+    - Thickness: As per IS 694
+    - Voltage Grade: 1100V
+    - Temperature: 70°C/90°C
+    - Standards: IS 694, IEC 60227
+
+4.2 Conduit Pipes:
+    - Size: 20mm-50mm
+    - Material: UPVC/CPVC
+    - Thickness: 1.6mm-2.5mm
+    - Length: 3 meters
+    - Fire Rating: Self-extinguishing
+    - Impact: High resistance
+    - Standards: IS 9537
+
+4.3 Cable Trays:
+    - Width: 50mm-300mm
+    - Depth: 25mm-75mm
+    - Material: GI/Aluminum
+    - Thickness: 1.2mm-2.0mm
+    - Load Capacity: 25-100 kg/m
+    - Finish: Hot-dip galvanized
+    - Standards: IS 9513
+
+5. SWITCHES & SOCKETS TECHNICAL SPECIFICATIONS
+----------------------------------------------
+5.1 Modular Switches:
+    - Rating: 6A/16A, 250V AC
+    - Type: SP/DP, 1-way/2-way
+    - Material: Polycarbonate
+    - Contacts: Silver alloy
+    - Mechanical Life: 40,000 operations
+    - Electrical Life: 20,000 operations
+    - Warranty: 2 years
+
+5.2 Power Sockets:
+    - Rating: 6A/16A, 250V AC
+    - Type: 2-pin/3-pin
+    - Shutters: Safety shutters
+    - Contacts: Phosphor bronze
+    - Insertions: 10,000 minimum
+    - Withdrawal Force: 2-6 N
+    - Warranty: 2 years
+
+5.3 Dimmer Switches:
+    - Load: 400W-600W
+    - Compatibility: LED/CFL/Incandescent
+    - Control: Rotary/Touch
+    - Dimming Range: 10%-100%
+    - Efficiency: >90%
+    - Protection: Overload/short circuit
+    - Warranty: 2 years
+
+INSTALLATION SPECIFICATIONS
+===========================
+
+1. GENERAL INSTALLATION REQUIREMENTS
+------------------------------------
+1.1 Mounting:
+    - Solid mounting surfaces
+    - Appropriate fasteners
+    - Correct alignment
+    - Adequate support
+
+1.2 Wiring:
+    - Correct wire sizes
+    - Proper connections
+    - Adequate insulation
+    - Proper earthing
+
+1.3 Clearances:
+    - Minimum distances
+    - Ventilation spaces
+    - Access for maintenance
+    - Safety clearances
+
+2. PRODUCT-SPECIFIC INSTALLATION
+--------------------------------
+2.1 Fans Installation:
+    - Secure ceiling mounting
+    - Proper balancing
+    - Correct capacitor connection
+    - Adequate earthing
+
+2.2 Geysers Installation:
+    - Vertical mounting only
+    - Pressure relief valve
+    - Proper water connections
+    - Dedicated electrical circuit
+
+2.3 Lighting Installation:
+    - Correct fixture matching
+    - Proper heat dissipation
+    - Correct dimmer compatibility
+    - Adequate ventilation
+
+2.4 Wiring Installation:
+    - Correct conduit sizing
+    - Proper bending radius
+    - Adequate cable support
+    - Proper termination
+
+2.5 Switches Installation:
+    - Correct box depth
+    - Proper alignment
+    - Secure fastening
+    - Correct wiring
+
+TESTING AND COMMISSIONING
+=========================
+
+1. PRE-INSTALLATION TESTING
+---------------------------
+1.1 Visual Inspection:
+    - Physical damage check
+    - Component verification
+    - Label verification
+    - Accessory verification
+
+1.2 Electrical Testing:
+    - Continuity test
+    - Insulation resistance
+    - High voltage test
+    - Functional test
+
+2. POST-INSTALLATION TESTING
+----------------------------
+2.1 Safety Tests:
+    - Earth continuity
+    - Insulation resistance
+    - Polarity verification
+    - Functional operation
+
+2.2 Performance Tests:
+    - Load testing
+    - Temperature testing
+    - Noise level testing
+    - Efficiency verification
+
+3. COMMISSIONING PROCEDURES
+---------------------------
+3.1 Initial Startup:
+    - Step-by-step procedure
+    - Safety checks
+    - Performance verification
+    - Documentation
+
+3.2 Customer Handover:
+    - Operation demonstration
+    - Maintenance instructions
+    - Warranty documentation
+    - Contact information
+
+MAINTENANCE SPECIFICATIONS
+==========================
+
+1. PREVENTIVE MAINTENANCE
+-------------------------
+1.1 Regular Checks:
+    - Monthly visual inspection
+    - Quarterly cleaning
+    - Annual performance check
+    - Biannual professional inspection
+
+1.2 Lubrication:
+    - Motor bearings (where applicable)
+    - Moving parts
+    - Using recommended lubricants
+    - At specified intervals
+
+2. CORRECTIVE MAINTENANCE
+-------------------------
+2.1 Troubleshooting:
+    - Symptom identification
+    - Cause analysis
+    - Solution implementation
+    - Verification testing
+
+2.2 Component Replacement:
+    - Genuine parts only
+    - Proper procedures
+    - Testing after replacement
+    - Documentation update
+
+3. SAFETY MAINTENANCE
+---------------------
+3.1 Electrical Safety:
+    - Regular insulation testing
+    - Earth continuity verification
+    - Protection device testing
+    - Safety feature verification
+
+3.2 Mechanical Safety:
+    - Structural integrity
+    - Mounting security
+    - Moving part safety
+    - Guard verification
+
+ENVIRONMENTAL SPECIFICATIONS
+============================
+
+1. OPERATING ENVIRONMENT
+------------------------
+1.1 Temperature:
+    - Minimum: -10°C
+    - Maximum: +40°C
+    - Storage: -20°C to +60°C
+
+1.2 Humidity:
+    - Operating: 5%-85% RH
+    - Non-condensing: Up to 95% RH
+    - Special conditions: IP rated
+
+1.3 Altitude:
+    - Standard: Up to 2000m
+    - Reduced rating: Above 2000m
+    - Derating factors apply
+
+2. ENVIRONMENTAL PROTECTION
+---------------------------
+2.1 Material Safety:
+    - RoHS compliant
+    - REACH compliant
+    - Halogen free options
+    - Low smoke materials
+
+2.2 Energy Efficiency:
+    - Energy Star ratings
+    - BEE star ratings
+    - Power factor correction
+    - Standby power reduction
+
+3. END-OF-LIFE MANAGEMENT
+-------------------------
+3.1 Disposal:
+    - Separate material streams
+    - Proper recycling
+    - Hazardous material handling
+    - Environmental compliance
+
+3.2 Recycling:
+    - Material recovery
+    - Component reuse
+    - Proper documentation
+    - Environmental reporting
+
+================================================================
+This technical specifications manual is proprietary to Harvel Electric.
+For specific product specifications, refer to individual product datasheets.
+All specifications are subject to change without notice.
+================================================================`,
+                    fileName: 'Harvel-Electric-Technical-Specifications.txt'
+                },
+                'fans-specs': {
+                    content: `HARVEL ELECTRIC - FANS TECHNICAL SPECIFICATIONS
+================================================================
+
+COMPLETE FANS PRODUCT RANGE SPECIFICATIONS
+==========================================
+
+CEILING FANS
+------------
+
+1. HARVEL SUPREME CEILING FAN (HSCF-1200-BLDC)
+------------------------------------------------
+Technical Specifications:
+- Sweep: 1200mm (48 inches)
+- Motor Type: Brushless DC (BLDC)
+- Power Consumption: 55W
+- Speed Settings: 5 (Remote Controlled)
+- Air Delivery: 230 Cubic Meters per Minute
+- RPM Range: 300-380 RPM
+- Noise Level: <45 dB(A)
+- Power Factor: >0.9
+- Voltage: 230V AC, 50Hz
+- Starting Current: 0.8A
+- Running Current: 0.24A
+
+Physical Specifications:
+- Blade Material: ABS Plastic with Wooden Finish
+- Blade Pitch: 12 degrees
+- Number of Blades: 3/5 (Selectable)
+- Motor Housing: Aluminum Die-cast
+- Down Rod: 150mm (Standard), 300mm (Optional)
+- Weight: 5.8 kg
+
+Features:
+- Remote Control with LCD Display
+- Timer Function (1/2/4/8 hours)
+- Sleep Mode with Auto Speed Reduction
+- Reverse Function (Summer/Winter Mode)
+- Speed Memory Function
+- Child Lock Feature
+- LED Indicator Lights
+
+Safety Features:
+- Overload Protection
+- Thermal Cut-off
+- Surge Protection
+- Double Insulation
+- IP20 Rated
+
+Installation Requirements:
+- Ceiling Height: Minimum 2.7 meters
+- Mounting: Concrete/RC Ceiling
+- Fixing: M8 Hook Bolt (Supplied)
+- Wiring: 1.5 sq.mm Copper Wire
+- Regulator: Not Required (Built-in)
+
+Warranty:
+- Motor: 5 Years
+- Electronics: 2 Years
+- Remote Control: 1 Year
+- Blades & Accessories: 1 Year
+
+2. HARVEL TURBO TABLE FAN (HTTF-400-OSC)
+----------------------------------------
+Technical Specifications:
+- Blade Size: 400mm (16 inches)
+- Motor Type: Copper Wound, Ball Bearing
+- Power Consumption: 50W
+- Speed Settings: 3 (800/1000/1200 RPM)
+- Oscillation: 90 Degrees Automatic
+- Tilt Adjustment: 30 Degrees Vertical
+- Air Throw: Up to 6 meters
+- Noise Level: <50 dB(A)
+- Voltage: 230V AC, 50Hz
+
+Physical Specifications:
+- Base Material: Heavy Duty Plastic
+- Grill Material: Powder Coated Steel
+- Height: 400mm (Adjustable)
+- Footprint: 400mm x 400mm
+- Weight: 3.5 kg
+
+Features:
+- 3-Speed Rotary Control
+- Automatic 90° Oscillation
+- Vertical Tilt Adjustment
+- Carry Handle
+- Safety Grill with Fine Mesh
+- Non-slip Rubber Feet
+
+Safety Features:
+- Thermal Overload Protection
+- Tip-over Safety Switch
+- Child-safe Grill Design
+- Double Insulation
+- IP20 Rated
+
+Installation Requirements:
+- Table/Desk Surface: Stable, Flat
+- Power Source: 230V Socket
+- Clearance: 1 meter all around
+- Ventilation: Free Air Flow
+
+Warranty:
+- Motor: 2 Years
+- Mechanical Parts: 1 Year
+- Plastic Components: 1 Year
+
+3. HARVEL SILENT EXHAUST FAN (HSEF-150-IP44)
+--------------------------------------------
+Technical Specifications:
+- Size: 150mm (6 inches)
+- Motor Type: Sleeve Bearing, Capacitor Start
+- Power Consumption: 25W
+- Air Flow: 280 Cubic Meters per Hour
+- Static Pressure: 15 Pa
+- Noise Level: <35 dB(A)
+- RPM: 1350
+- Voltage: 230V AC, 50Hz
+- Starting Current: 0.6A
+- Running Current: 0.11A
+
+Physical Specifications:
+- Housing Material: UV Stabilized ABS
+- Impeller: 6-Blade, Balanced
+- Shutter: Automatic Back-draft
+- Mounting: Wall or Ceiling
+- Duct Size: 150mm (6 inches)
+- Weight: 1.2 kg
+
+Features:
+- Ultra-silent Operation
+- Automatic Back-draft Shutter
+- Moisture Resistant Construction
+- Easy Installation with Template
+- Pre-wired with 1 meter Cable
+- Maintenance-free Design
+
+Safety Features:
+- IP44 Rating (Splash Proof)
+- Thermal Protection
+- Double Insulation
+- Fire Retardant Materials
+- Child-safe Grill
+
+Installation Requirements:
+- Wall Thickness: 100-250mm
+- Opening Size: 160mm Diameter
+- Mounting: Horizontal/Vertical
+- Ventilation: Free Air Intake/Exhaust
+- Ducting: Minimum 150mm Diameter
+
+Warranty:
+- Motor: 1 Year
+- Housing: 1 Year
+- Shutter Mechanism: 1 Year
+
+4. HARVEL COOL BREEZE PEDESTAL FAN (HCBPF-450-RMT)
+--------------------------------------------------
+Technical Specifications:
+- Blade Size: 450mm (18 inches)
+- Motor Type: Copper Wound, Ball Bearing
+- Power Consumption: 65W
+- Speed Settings: 3 (Remote Controlled)
+- Oscillation: 85 Degrees
+- Height Adjustment: 1000-1500mm
+- Air Throw: Up to 8 meters
+- Noise Level: <52 dB(A)
+- Voltage: 230V AC, 50Hz
+
+Physical Specifications:
+- Base Material: Weighted Plastic
+- Column: Chrome Plated Steel
+- Grill: Powder Coated Steel
+- Footprint: 450mm Diameter
+- Weight: 6.5 kg
+
+Features:
+- Remote Control Operation
+- 8-Hour Timer with Display
+- Height Adjustment Mechanism
+- 85° Wide Oscillation
+- Carry Handle
+- Cable Management
+- LED Control Panel
+
+Safety Features:
+- Stable Weighted Base
+- Tip-over Protection
+- Thermal Cut-off
+- Child-safe Grill
+- Double Insulation
+
+Installation Requirements:
+- Floor Surface: Level, Stable
+- Clearance: 1.5 meters all around
+- Power Source: 230V Socket
+- Ventilation: Free Air Circulation
+
+Warranty:
+- Motor: 2 Years
+- Column & Base: 1 Year
+- Remote Control: 1 Year
+- Other Components: 1 Year
+
+5. HARVEL WALL MOUNT INDUSTRIAL FAN (HWMF-500-IND)
+--------------------------------------------------
+Technical Specifications:
+- Blade Size: 500mm (20 inches)
+- Motor Type: Industrial Grade, Ball Bearing
+- Power Consumption: 75W
+- Speed Settings: 3
+- Oscillation: 180 Degrees Horizontal
+- Tilt Adjustment: 30 Degrees Vertical
+- Air Flow: 4500 CFM
+- Noise Level: <55 dB(A)
+- Voltage: 230V AC, 50Hz
+
+Physical Specifications:
+- Housing: Powder Coated Steel
+- Blades: Aluminum, Aerodynamic
+- Grill: Heavy Duty Steel
+- Mounting Bracket: Galvanized Steel
+- Weight: 8.2 kg
+
+Features:
+- Industrial Grade Construction
+- 180° Horizontal Oscillation
+- 30° Vertical Tilt Adjustment
+- Heavy Duty Mounting Bracket
+- 3-Speed Rotary Control
+- All-metal Construction
+- Weather Resistant Design
+
+Safety Features:
+- Heavy Duty Safety Grill
+- Secure Mounting System
+- Thermal Overload Protection
+- Double Insulation
+- IP54 Rated (Dust & Splash Proof)
+
+Installation Requirements:
+- Wall Strength: Solid Masonry/Concrete
+- Mounting Height: 2-3 meters
+- Fixings: M10 Expansion Bolts (Supplied)
+- Clearance: 2 meters front, 1 meter sides
+- Power Supply: Dedicated Circuit
+
+Warranty:
+- Motor: 3 Years
+- Mechanical Parts: 2 Years
+- Housing & Grill: 1 Year
+
+PERFORMANCE TESTING SPECIFICATIONS
+==================================
+
+1. AIR DELIVERY TESTING
+-----------------------
+Test Conditions:
+- Ambient Temperature: 27°C ± 2°C
+- Relative Humidity: 65% ± 5%
+- Atmospheric Pressure: 1013 mbar
+- Test Chamber: As per IS 374:1979
+
+Test Methods:
+- Anemometer Method for Air Velocity
+- Pitot Tube Method for Pressure
+- Hot Wire Anemometer for Accuracy
+- Multiple Point Measurement
+
+Acceptance Criteria:
+- Air Delivery: Within ±5% of Rated Value
+- Uniform Air Flow
+- Stable Operation
+- Repeatable Results
+
+2. NOISE LEVEL TESTING
+----------------------
+Test Conditions:
+- Anechoic Chamber
+- Background Noise: <20 dB(A)
+- Microphone Position: 1 meter from fan
+- Height: 1.5 meters from floor
+
+Measurement Parameters:
+- Sound Pressure Level (dB(A))
+- Octave Band Analysis
+- Tonal Component Analysis
+- Impulse Noise Measurement
+
+Acceptance Criteria:
+- Noise Level: Below Specified Limits
+- No Abnormal Sounds
+- Smooth Operation
+- Consistent Performance
+
+3. POWER CONSUMPTION TESTING
+----------------------------
+Test Equipment:
+- Precision Power Analyzer
+- Current Clamp Meter
+- Voltage Stabilizer
+- Data Logger
+
+Measurement Parameters:
+- Input Power (Watts)
+- Current (Amps)
+- Voltage (Volts)
+- Power Factor
+- Efficiency
+
+Acceptance Criteria:
+- Power Consumption: Within ±10% of Rated
+- Power Factor: >0.85
+- Efficiency: Meeting Minimum Standards
+- Stable Operation
+
+4. SAFETY TESTING
+-----------------
+Electrical Safety Tests:
+- High Voltage Test: 2000V AC for 1 minute
+- Insulation Resistance: >100 MΩ at 500V DC
+- Earth Continuity: <0.1 Ω
+- Leakage Current: <0.25 mA
+
+Mechanical Safety Tests:
+- Impact Test: 0.5 Joule Impact
+- Stability Test: 10° Tilt Angle
+- Grill Safety: Finger Test
+- Mounting Security: Vibration Test
+
+Thermal Safety Tests:
+- Temperature Rise: Within Limits
+- Thermal Cut-off: Proper Operation
+- Heat Dissipation: Adequate
+- Material Temperature: Below Limits
+
+INSTALLATION SPECIFICATIONS
+===========================
+
+1. CEILING FAN INSTALLATION
+---------------------------
+Pre-installation Checks:
+- Ceiling Strength Verification
+- Electrical Wiring Check
+- Height Measurement
+- Clearance Verification
+
+Installation Steps:
+1. Install Mounting Bracket
+2. Assemble Fan Components
+3. Connect Electrical Wires
+4. Secure Fan to Ceiling
+5. Install Blades
+6. Balance the Fan
+7. Test Operation
+
+Post-installation Tests:
+- Vibration Check
+- Noise Level Check
+- Speed Verification
+- Safety Feature Test
+
+2. EXHAUST FAN INSTALLATION
+---------------------------
+Site Preparation:
+- Wall Opening Preparation
+- Duct Work Installation
+- Electrical Connection Point
+- Weather Proofing
+
+Installation Procedure:
+1. Create Opening (160mm Diameter)
+2. Install Mounting Frame
+3. Connect Duct Pipe
+4. Wire Electrical Connections
+5. Secure Fan in Position
+6. Install Grill/Cover
+7. Seal Gaps
+
+Commissioning Tests:
+- Air Flow Verification
+- Noise Level Check
+- Shutter Operation
+- Moisture Protection
+
+3. PEDESTAL/TABLE FAN INSTALLATION
+----------------------------------
+Setup Requirements:
+- Stable Surface/Floor
+- Adequate Clearance
+- Proper Power Source
+- Ventilation Space
+
+Assembly Procedure:
+1. Assemble Base/Stand
+2. Install Motor Housing
+3. Attach Blades & Grill
+4. Connect Control Mechanism
+5. Final Adjustments
+
+Operational Checks:
+- Stability Verification
+- Oscillation Test
+- Speed Control Test
+- Safety Feature Check
+
+MAINTENANCE SCHEDULE
+====================
+
+1. REGULAR MAINTENANCE
+---------------------
+Daily/Weekly:
+- Visual Inspection
+- Noise Level Check
+- Vibration Check
+- Performance Verification
+
+Monthly:
+- Cleaning of Blades & Grill
+- Lubrication Check
+- Tightness of Fasteners
+- Electrical Connection Check
+
+Quarterly:
+- Deep Cleaning
+- Bearing Inspection
+- Motor Performance Check
+- Safety Feature Test
+
+2. PREVENTIVE MAINTENANCE
+-------------------------
+Every 6 Months:
+- Complete Disassembly & Cleaning
+- Bearing Lubrication
+- Electrical Testing
+- Performance Calibration
+
+Annual:
+- Professional Inspection
+- Component Replacement (if needed)
+- Efficiency Testing
+- Safety Certification Renewal
+
+3. CORRECTIVE MAINTENANCE
+-------------------------
+Troubleshooting Guide:
+- No Operation: Check power, fuse, switch
+- Reduced Speed: Check capacitor, voltage
+- Vibration: Check balance, mounting
+- Noise: Check bearings, loose parts
+- Overheating: Check load, ventilation
+
+Repair Procedures:
+- Use Genuine Spare Parts Only
+- Follow Manufacturer Instructions
+- Safety First - Disconnect Power
+- Test After Repair
+
+SAFETY INSTRUCTIONS
+===================
+
+1. INSTALLATION SAFETY
+---------------------
+- Install by Qualified Electrician Only
+- Follow Local Electrical Codes
+- Proper Earthing Mandatory
+- Use Correct Wire Size
+- Secure Mounting Essential
+
+2. OPERATIONAL SAFETY
+---------------------
+- Keep Away from Water
+- Don't Insert Objects through Grill
+- Don't Operate Damaged Fan
+- Supervise Children & Pets
+- Don't Cover Ventilation Openings
+
+3. MAINTENANCE SAFETY
+---------------------
+- Disconnect Power Before Maintenance
+- Use Insulated Tools
+- Don't Modify Safety Features
+- Follow Maintenance Schedule
+- Use Only Recommended Parts
+
+ENVIRONMENTAL SPECIFICATIONS
+============================
+
+1. OPERATING CONDITIONS
+-----------------------
+- Temperature Range: 0°C to 40°C
+- Humidity Range: 5% to 85% RH
+- Altitude: Up to 2000 meters
+- Storage Temperature: -10°C to 50°C
+
+2. ENERGY EFFICIENCY
+--------------------
+- Energy Star Compliant
+- BEE Star Rated
+- Power Factor Corrected
+- High Efficiency Motors
+
+3. ENVIRONMENTAL COMPLIANCE
+---------------------------
+- RoHS Compliant Materials
+- REACH Compliant
+- Recyclable Packaging
+- Reduced Carbon Footprint
+
+4. END-OF-LIFE MANAGEMENT
+-------------------------
+- Separate Material Streams
+- Proper Recycling
+- Hazardous Material Handling
+- Environmental Reporting
+
+================================================================
+This technical specification document is proprietary to Harvel Electric.
+All specifications are subject to change without notice.
+For latest specifications, visit www.harvelelectric.com/specifications
+================================================================`,
+                    fileName: 'Harvel-Electric-Fans-Technical-Specifications.txt'
+                }
+            };
+            
+            // Add more documentation for other categories
+            documentation['geysers-specs'] = {
+                content: `HARVEL ELECTRIC - GEYSERS TECHNICAL SPECIFICATIONS
+================================================================
+
+Detailed specifications for geysers products...`,
+                fileName: 'Harvel-Electric-Geysers-Technical-Specifications.txt'
+            };
+            
+            documentation['cfl-specs'] = {
+                content: `HARVEL ELECTRIC - CFL LIGHTS TECHNICAL SPECIFICATIONS
+================================================================
+
+Detailed specifications for CFL lighting products...`,
+                fileName: 'Harvel-Electric-CFL-Technical-Specifications.txt'
+            };
+            
+            documentation['wiring-specs'] = {
+                content: `HARVEL ELECTRIC - WIRING PRODUCTS TECHNICAL SPECIFICATIONS
+================================================================
+
+Detailed specifications for wiring products...`,
+                fileName: 'Harvel-Electric-Wiring-Technical-Specifications.txt'
+            };
+            
+            documentation['switches-specs'] = {
+                content: `HARVEL ELECTRIC - SWITCHES & SOCKETS TECHNICAL SPECIFICATIONS
+================================================================
+
+Detailed specifications for switches and sockets...`,
+                fileName: 'Harvel-Electric-Switches-Technical-Specifications.txt'
+            };
+            
+            // Download buttons
+            $('.download-btn').on('click', function() {
+                const fileType = $(this).data('file');
+                
+                if (documentation[fileType]) {
+                    downloadFile(documentation[fileType].content, documentation[fileType].fileName, 'text/plain');
+                } else {
+                    // Fallback for any missing documentation
+                    const fallbackContent = `HARVEL ELECTRIC - ${fileType.toUpperCase().replace('-', ' ')}\n\nDetailed technical specifications and product information.\n\nVisit www.harvelelectric.com for complete documentation.`;
+                    const fallbackFileName = `Harvel-Electric-${fileType.replace('-', '-')}.txt`;
+                    downloadFile(fallbackContent, fallbackFileName, 'text/plain');
+                }
+                
+                // Add animation to clicked button
+                $(this).addClass('pulse-animation');
+                setTimeout(() => {
+                    $(this).removeClass('pulse-animation');
+                }, 1000);
+            });
+            
+            // Handle product detail view
+            $(document).on('click', '.view-details', function() {
+                const productId = $(this).data('product');
+                let product = null;
+                
+                // Find product in data
+                for (const category in products) {
+                    product = products[category].find(p => p.id === productId);
+                    if (product) break;
+                }
+                
+                if (product) {
+                    const productDetails = `
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="product-img-container" style="height: 300px; border-radius: 15px; overflow: hidden;">
+                                    <img src="${product.image}" alt="${product.name}" class="product-img" style="height: 100%; object-fit: cover;">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h4 class="mb-3">${product.name}</h4>
+                                <p class="text-muted mb-4">${product.description}</p>
+                                
+                                <div class="mb-4">
+                                    <h5>Key Features</h5>
+                                    <ul class="list-group list-group-flush">
+                                        ${product.features.map(feature => `<li class="list-group-item ps-0 border-0"><i class="bi bi-check-circle-fill text-success me-2"></i> ${feature}</li>`).join('')}
+                                    </ul>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <h5>Price</h5>
+                                    <h3 class="text-primary">${product.price}</h3>
+                                </div>
+                                
+                                <div class="alert alert-info">
+                                    <i class="bi bi-info-circle me-2"></i>
+                                    Detailed specifications, warranty information, and installation guidelines are available for download.
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    $('#productDetailsContent').html(productDetails);
+                    $('#productDetailsModalLabel').text(product.name);
+                    
+                    // Set download button for this product
+                    $('#downloadProductDetails').off('click').on('click', function() {
+                        const productSpecs = `
+${product.name.toUpperCase()}
+${'='.repeat(product.name.length)}
+
+PRODUCT DESCRIPTION:
+${product.description}
+
+KEY FEATURES:
+${product.features.map((f, i) => `${i+1}. ${f}`).join('\n')}
+
+PRICE: ${product.price}
+
+CATEGORY: ${product.category.toUpperCase()}
+
+MANUFACTURER: Harvel Electric
+COUNTRY OF ORIGIN: India
+COMPLIANCE: IEC Standards, BIS Certified
+CUSTOMER SUPPORT: support@harvelelectric.com
+
+SAFETY INFORMATION:
+1. Installation by qualified electrician only
+2. Follow all local electrical codes
+3. Keep away from water unless specified
+4. Regular maintenance recommended
+
+WARRANTY:
+As per Harvel Electric warranty policy. Please retain purchase receipt.
+
+TECHNICAL SUPPORT:
+Phone: 1800-123-4567 (Toll Free)
+Email: support@harvelelectric.com
+Website: www.harvelelectric.com/support
+
+This document is generated on ${new Date().toLocaleDateString()}.
+                        `;
+                        
+                        downloadFile(productSpecs, `${product.name.replace(/\s+/g, '-')}-Specifications.txt`, 'text/plain');
+                        $('#productDetailsModal').modal('hide');
+                    });
+                    
+                    $('#productDetailsModal').modal('show');
+                }
+            });
+            
+            // Add animation classes to elements on scroll
+            function animateOnScroll() {
+                $('.fade-in-up').each(function() {
+                    const elementTop = $(this).offset().top;
+                    const elementBottom = elementTop + $(this).outerHeight();
+                    const viewportTop = $(window).scrollTop();
+                    const viewportBottom = viewportTop + $(window).height();
+                    
+                    if (elementBottom > viewportTop && elementTop < viewportBottom) {
+                        if (!$(this).hasClass('animated')) {
+                            $(this).addClass('animated');
+                            $(this).css('opacity', '1');
+                            $(this).css('transform', 'translateY(0)');
+                        }
+                    }
+                });
+            }
+            
+            // Initialize animation classes
+            $('.fade-in-up').css('opacity', '0').css('transform', 'translateY(30px)');
+            
+            // Run on load and scroll
+            animateOnScroll();
+            $(window).on('scroll', animateOnScroll);
+            
+            // Add loading animation to buttons on click
+            $('.btn').on('click', function() {
+                $(this).addClass('pulse-animation');
+                setTimeout(() => {
+                    $(this).removeClass('pulse-animation');
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>
